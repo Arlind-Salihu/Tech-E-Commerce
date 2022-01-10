@@ -11,7 +11,7 @@ import './assets/app.scss';
 
 
 Vue.component('Navbar', require('./components/Navbar.vue').default)
-Vue.component('Home', require('./views/Home.vue').default)
+Vue.component('home', require('./views/Home.vue').default)
 Vue.config.productionTip = false;
 
 new Vue({
