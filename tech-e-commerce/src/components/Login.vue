@@ -74,7 +74,7 @@
 
 <script>
 
-import {app} from '../firebase'
+import {fb} from '../firebase'
 export default {
   name: "Login",
   props: {
@@ -90,7 +90,7 @@ export default {
 
 methods:{
  register(){
-    app.auth().createUserWithEmailAndPassword(this.email, this.password)
+    fb.auth().createUserWithEmailAndPassword(this.email, this.password)
         .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;

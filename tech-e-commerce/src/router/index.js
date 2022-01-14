@@ -1,14 +1,17 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import Router from "vue-router";
 import Home from "../views/Home.vue";
 import Admin from "../views/Admin.vue";
 import Overview from "../views/Overview.vue";
 import Products from "../views/Products.vue";
 import Orders from "../views/Orders.vue";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
+export default  new Router({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes: [
   {
     path: "/",
     name: "Home",
@@ -45,14 +48,5 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
-];
-
-import app from '../firebase'
-
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
-});
-
-export default router;
+]
+})

@@ -2,8 +2,6 @@
   <div class="home">
     <Navbar></Navbar>
     <Hero></Hero>
-    <Products></Products>
-    <AboutUs></AboutUs>
       <products-list></products-list>
 
       <div class="container h-100">
