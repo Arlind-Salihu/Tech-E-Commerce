@@ -1,15 +1,13 @@
 <template>
-<div class="login">
-<!-- Modal -->
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+  <div class="login">
+        <!-- Modal -->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
 
-      <div class="modal-header">
-          
+                <div class="modal-body">
 
 
-      </div>
                         <ul class="nav nav-fill nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
@@ -44,7 +42,7 @@
                              
                             <div class="form-group">
                                 <label for="name">Your name</label>
-                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your nice name">
+                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your nick-name">
                             </div>
 
                             <div class="form-group">
@@ -69,7 +67,8 @@
             </div>
         </div>
         </div>
-
+    
+  </div>
 </template>
 
 <script>
@@ -89,9 +88,30 @@ export default {
 },
 
 methods:{
+    login(){
+        fb.auth().signInWithEmailAndPassword(this.email, this.password)
+            .then((user) => {
+                $('#login').modal('hide')
+                this.$router.replace('admin')
+            })
+            .catch(function(error){
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if(errorCode === 'auth/wrong-password'){
+                    alert('Wrong Password.');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+        })
+    },
  register(){
     fb.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .catch(function(error) {
+    .then((user) => {
+        $('#login').modal('hide')
+        this.$router.replace('admin');
+    })
+    .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
