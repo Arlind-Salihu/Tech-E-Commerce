@@ -32,6 +32,16 @@
                       <td>
                         {{product.name}}
                       </td>
+
+                      <td>
+                        {{product.price}}
+                      </td>
+
+                      <td>
+                        <button class="btn btn-primary" @click="editProduct(product)">Edit</button>
+                        <button class="btn btn-danger" @click="deleteProduct(product)">Delete</button>
+                      </td>
+                      
                     </tr>
                   </tbody>
                   </table>
@@ -59,7 +69,7 @@
                         </div>
 
                         <div class="form-group">
-                          <textarea name="description" class="form-control" placeholder="Product Description" v-model="product.description" style="height: 250px"/>
+                          <vue-editor v-model="product.description"></vue-editor>
                         </div>
                     </div>
 
@@ -72,12 +82,12 @@
                     </div>
 
                     <div class="form-group">
-                      <input type="text" placeholder="Product tags" v-model="product.tag" class="form-control">
+                      <input type="text" @keyup.188="addTag" placeholder="Product tags" v-model="tag" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label for="product_image">Product Image</label>
-                      <input type="file" @change="uploadImage()" class="form-control">
+                      <input type="file" @change="uploadImage" class="form-control">
                     </div>
 
                     </div>
@@ -85,7 +95,8 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button @click="addProduct()" type="button" class="btn btn-primary">Save changes</button>
+                    <button @click="addProduct()" type="button" class="btn btn-primary" v-if="modal == 'new'">Add Product</button>
+                    <button @click="updateProduct()" type="button" class="btn btn-primary" v-if="modal == 'edit'">Save changes</button>
                   </div>
                 </div>
               </div>
@@ -94,10 +105,14 @@
 </template>
 
 <script>
-
+import {VueEditor} from 'vue2-editor';
 import {fb, db} from '../firebase';
+
 export default {
   name: "Products",
+  components:{
+    VueEditor
+  },
   props: {
     msg: String,
   },
@@ -108,10 +123,12 @@ export default {
       name: null,
       description: null,
       price: null,
-      tag: null,
+      tags: [],
       image: null
       },
-      activeItem: null
+      activeItem: null,
+      modal: null,
+      tag: null
     }
   },
   firestore(){
@@ -120,24 +137,73 @@ export default {
     }
   },
   methods:{
-    uploadImage(){
+    addTag(){
+      this.product.tags.push(this.tag);
+      this.tag = "";
+    },
 
+    uploadImage(e){
+
+      let file = e.target.files[0];
+
+      var storageRef = fb.storage().ref('products/'+ file.name);
+
+      let uploadTask = storageRef.put(file);
+
+      uploadTask.on('state_changed',(snapshot)=>{
+
+      },(error) =>{
+
+      },()=>{
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL)=>{
+          this.product.image = downloadURL;
+          console.log('File available at', downloadURL);
+        });
+      });
+      console.log(e.target.files[0]);   
     },
 
     addNew(){
+      this.modal = 'new';
       $('#product').modal('show')
     },
 
     updateProduct(){
+    this.$firestore.products.doc(this.product.id).update(this.product);
 
-    },
+    Toast.fire({
+      icon: 'success',
+      title: 'Updated successfully!'
+    })
+    $('#product').modal('hide')
+  },
 
     editProduct(product){
-
+      this.modal = 'edit';
+      this.product = product;
+      $('#product').modal('show');
     },
 
     deleteProduct(doc){
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
 
+          this.$firestore.products.doc(doc['.key']).delete()
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Deleted successfully!'
+          })
+        }
+      })
     },
 
     readData(){
@@ -145,7 +211,13 @@ export default {
     },
 
     addProduct(){
-      this.$firestore.products.add(this.product)
+      this.$firestore.products.add(this.product);
+
+      Toast.fire({
+      icon: 'success',
+      title: 'Created successfully!'
+    })
+
       $('#product').modal('hide')
     }
   },

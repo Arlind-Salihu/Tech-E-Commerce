@@ -17,7 +17,8 @@
     "popper.js": "^1.14.6",
     "vue": "^2.6.11",
     "vue-firestore": "^0.3.30",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vue2-editor": "^2.10.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -32,6 +33,7 @@
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "sweetalert2": "^11.3.6",
     "vue-template-compiler": "^2.6.11"
   }
 }
