@@ -67,13 +67,6 @@
                                 <span>Orders</span>
                             </router-link>
                         </li>
-
-                        <li>
-                            <router-link to="/admin/profile">
-                                <i class="fa fa-user"></i>
-                                <span>Profile</span>
-                            </router-link>
-                        </li>
                         <li>
                             <a href="#" @click="logout()">
                                 <i class="fa fa-power-off"></i>
