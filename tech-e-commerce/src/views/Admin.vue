@@ -8,7 +8,7 @@
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
-                    <a href="#">Vue Shop</a>
+                    <a href="#">Tech E-Commerce</a>
                     <div id="close-sidebar" @click="closeMenu">
                         <i class="fas fa-times"></i>
                     </div>
@@ -16,13 +16,13 @@
                 <!-- sidebar-header  -->
                 <div class="sidebar-item sidebar-header">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="/img/user.png" alt="User picture">
+                        <img class="img-responsive img-rounded" src="../assets/user.png" alt="User picture">
                     </div>
                     <div class="user-info">
-                        <span class="user-name">Jhon
-                            <strong>Smith</strong>
-                        </span>
-                        <span class="user-role"> {{email}} </span>
+                        <!-- <span class="user-name">
+                            <strong>{{name}}</strong>
+                        </span> -->
+                        <span class="user-role"> <strong>{{email}}</strong></span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -65,6 +65,12 @@
                             <router-link to="/admin/orders">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span>Orders</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/profile">
+                                <i class="fa fa-user"></i>
+                                <span>Profile</span>
                             </router-link>
                         </li>
                         <li>
@@ -123,6 +129,12 @@ export default {
           });
       }
   },
+  
+  created(){
+      let user = fb.auth().currentUser;
+      this.email = user.email;
+      this.name = user.name;
+  }
 };
 </script>
 

@@ -22,9 +22,9 @@
                             
                             <h5 class="text-center">Login Please</h5>
                             <div class="form-group">
+                                                          
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
@@ -42,7 +42,7 @@
                              
                             <div class="form-group">
                                 <label for="name">Your name</label>
-                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your nick-name">
+                                <input type="text" v-model="name" class="form-control" id="name" placeholder="Your username">
                             </div>
 
                             <div class="form-group">

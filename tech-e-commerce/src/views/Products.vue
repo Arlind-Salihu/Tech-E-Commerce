@@ -83,11 +83,26 @@
 
                     <div class="form-group">
                       <input type="text" @keyup.188="addTag" placeholder="Product tags" v-model="tag" class="form-control">
+
+                      <div class="d-flex">
+                      <p v-for="tag in product.tags" v-bind:key="tag">
+                        <span class="p-1">{{tag}}</span>
+                      </p>
+                      </div>
                     </div>
 
                     <div class="form-group">
                       <label for="product_image">Product Image</label>
                       <input type="file" @change="uploadImage" class="form-control">
+                    </div>
+
+                    <div class="form-group d-flex">
+                      <div class="p-1" v-for="(image, index) in product.images" v-bind:key="(image,index)">
+                        <div class="img-wrapp">
+                          <img :src="image" alt="" width="120px">
+                          <span class="delete-img" @click="deleteImage(image,index)">X</span>
+                        </div>
+                      </div>
                     </div>
 
                     </div>
@@ -124,7 +139,7 @@ export default {
       description: null,
       price: null,
       tags: [],
-      image: null
+      images: []
       },
       activeItem: null,
       modal: null,
@@ -137,6 +152,18 @@ export default {
     }
   },
   methods:{
+
+    deleteImage(img, index){
+      let image = fb.storage().refFromURL(img);
+
+      this.product.images.splice(index,1);
+      image.delete().then(function(){
+        console.log('image deleted');
+      }).catch(function(error){
+        console.log('an error occurred');;
+      });
+    },
+
     addTag(){
       this.product.tags.push(this.tag);
       this.tag = "";
@@ -144,27 +171,39 @@ export default {
 
     uploadImage(e){
 
-      let file = e.target.files[0];
+      if(e.target.files[0]){
+        let file = e.target.files[0];
 
-      var storageRef = fb.storage().ref('products/'+ file.name);
+          var storageRef = fb.storage().ref('products/'+ file.name);
 
-      let uploadTask = storageRef.put(file);
+          let uploadTask = storageRef.put(file);
 
-      uploadTask.on('state_changed',(snapshot)=>{
+          uploadTask.on('state_changed',(snapshot)=>{
 
-      },(error) =>{
+          },(error) =>{
 
-      },()=>{
-        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL)=>{
-          this.product.image = downloadURL;
-          console.log('File available at', downloadURL);
-        });
-      });
-      console.log(e.target.files[0]);   
+          },()=>{
+            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL)=>{
+              this.product.images.push(downloadURL);
+              console.log('File available at', downloadURL);
+            });
+          });
+      }   
+    },
+
+    reset(){
+      this.product = {
+      name: null,
+      description: null,
+      price: null,
+      tags: [],
+      images: []
+      }
     },
 
     addNew(){
       this.modal = 'new';
+      this.reset();
       $('#product').modal('show')
     },
 
@@ -196,7 +235,7 @@ export default {
       }).then((result) => {
         if (result.isConfirmed) {
 
-          this.$firestore.products.doc(doc['.key']).delete()
+          this.$firestore.products.doc(doc.id).delete()
 
           Toast.fire({
             icon: 'success',
@@ -230,5 +269,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+.img-wrapp{
+  position: relative;
+}
+
+.img-wrapp span.delete-img{
+  position: absolute;
+  top: -14px;
+  left: -2px;
+}
+
+.img-wrapp span.delete-img:hover{
+  cursor: pointer;
+}
 
 </style>
