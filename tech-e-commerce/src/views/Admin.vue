@@ -133,7 +133,7 @@ export default {
   created(){
       let user = fb.auth().currentUser;
       this.email = user.email;
-      this.name = user.name;
+      
   }
 };
 </script>

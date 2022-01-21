@@ -73,7 +73,7 @@
 
 <script>
 
-import {fb} from '../firebase'
+import {fb,db} from '../firebase'
 export default {
   name: "Login",
   props: {
@@ -89,6 +89,7 @@ export default {
 
 methods:{
     login(){
+
         fb.auth().signInWithEmailAndPassword(this.email, this.password)
             .then((user) => {
                 $('#login').modal('hide')
@@ -111,7 +112,7 @@ methods:{
         $('#login').modal('hide')
         this.$router.replace('admin');
     })
-    .catch(function(error) {
+    .catch(function(error){
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
