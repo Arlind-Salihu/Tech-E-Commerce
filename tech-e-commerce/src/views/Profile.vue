@@ -119,7 +119,7 @@
 
                         <div class="col-md-4">
                           <div class="form-group">
-                              <input type="button" @click=" resetPassword " value="Reset password email" class="btn btn-success w-100">
+                              <input type="button" @click="resetPassword" value="Reset password email" class="btn btn-success w-100">
                           </div>
                         </div>
                       </div>

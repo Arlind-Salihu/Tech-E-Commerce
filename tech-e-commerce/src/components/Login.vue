@@ -110,7 +110,18 @@ methods:{
     fb.auth().createUserWithEmailAndPassword(this.email, this.password)
     .then((user) => {
         $('#login').modal('hide')
-        this.$router.replace('admin');
+
+        db.collection("profiles").doc(user.user.uid).set({
+                        name: this.name
+                    })
+                    .then(function() {
+                        console.log("Document successfully written!");
+                    })
+                    .catch(function(error) {
+                        console.error("Error writing document: ", error);
+                    });
+            
+                this.$router.replace('admin');
     })
     .catch(function(error){
     // Handle Errors here.
