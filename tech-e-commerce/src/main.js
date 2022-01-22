@@ -4,7 +4,6 @@ import router from "./router";
 import jQuery from "jquery";
 import {fb} from './firebase'
 import VueFirestore from 'vue-firestore';
-
 require('firebase/firestore')
 
 Vue.use(VueFirestore, {
@@ -13,6 +12,9 @@ Vue.use(VueFirestore, {
 })
 
 Vue.use(VueFirestore)
+
+import Vue2Filters from 'vue2-filters'
+Vue.use(Vue2Filters)
 
 window.$ = window.jQuery = jQuery;
 
@@ -34,6 +36,11 @@ window.Toast = Toast;
 
 
 Vue.component('Navbar', require('./components/Navbar.vue').default)
+Vue.component('products-list', require('./sections/ProductList.vue').default);
+
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
 Vue.config.productionTip = false;
 
 let app = '';
