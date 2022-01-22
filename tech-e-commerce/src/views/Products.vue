@@ -235,7 +235,7 @@ export default {
       }).then((result) => {
         if (result.isConfirmed) {
 
-          this.$firestore.products.doc(doc.uid).delete()
+          this.$firestore.products.doc(doc.id).delete()
 
           Toast.fire({
             icon: 'success',
