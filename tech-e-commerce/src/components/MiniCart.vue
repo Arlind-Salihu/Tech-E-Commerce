@@ -1,6 +1,6 @@
 <template>
   <div class="mini-cart">
-   
+
         <!-- Modal -->
         <div class="modal fade" id="miniCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -13,9 +13,8 @@
               </div>
               <div class="modal-body">
                   <ul>
-                    <li v-for="item in this.$store.state.cart" class="media">
+                    <li v-for="item in this.$store.state.cart" v-bind:key="item" class="media">
                       <img :src="item.productImage" width="80px" class="align-self-center mr-3" alt="">
-                      
                       <div class="media-body">
                         <h5 class="mt-0">{{item.productName}}</h5>
                         <p class="mt-0">{{item.productPrice | currency}}</p>
@@ -33,7 +32,7 @@
           </div>
         </div>
 
-    
+
   </div>
 </template>
 

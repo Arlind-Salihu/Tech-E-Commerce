@@ -20,7 +20,7 @@
       </div>
       <login></login>
 
-      <mini-Cart></mini-cart>
+      <mini-cart></mini-cart>
 
   </div>
 </template>
