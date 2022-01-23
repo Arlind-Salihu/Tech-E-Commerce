@@ -18,12 +18,13 @@
                             <div class="d-flex justify-content-between">
                             <h5 class="card-title">{{ product.name }}</h5>
                             <h5 class="card-priceS">{{ product.price | currency }}</h5>
+                            
 
 
                             </div>
                             <add-to-cart
-                            :product-image="getImage(product.images)"
-                             :product-id="product.id"
+                            :image="getImage(product.images)"
+                             :p-id="product.id"
                              :price="product.price"
                              :name="product.name"> 
                              </add-to-cart>
@@ -37,10 +38,8 @@
 </template>
 
 <script>
-import AddToCart from '../components/AddToCart.vue';
 import {db} from '../firebase';
 export default {
-  components: { AddToCart },
   name: "Products-list",
   props: {
     msg: String
