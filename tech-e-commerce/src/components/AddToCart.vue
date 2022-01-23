@@ -13,7 +13,7 @@ export default {
     name: String,
     price: String,
     image: String,
-    pId: String
+    pid: String
   },
   data(){
       return {
