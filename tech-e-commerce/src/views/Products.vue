@@ -208,7 +208,7 @@ export default {
     },
 
     updateProduct(){
-    this.$firestore.products.doc(this.product.uid).update(this.product);
+    this.$firestore.products.doc(this.product.id).update(this.product);
 
     Toast.fire({
       icon: 'success',

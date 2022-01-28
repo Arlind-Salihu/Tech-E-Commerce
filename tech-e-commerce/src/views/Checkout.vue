@@ -1,4 +1,6 @@
 <template>
+<div class="checkout">
+    <Navbar></Navbar>
    <div class="container mt-5 pt-5">
 
             <div class="row">
@@ -20,5 +22,6 @@
                     Total Price
                 </div>
             </div>
+        </div>
    </div>
 </template>
