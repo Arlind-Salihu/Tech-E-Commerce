@@ -10,18 +10,6 @@ export default new Vuex.Store({
     state: {
       cart: cart ? JSON.parse(cart) : [],
     },
-
-    getters: {
-      totalPrice: state => {
-        let total = 0;
-        state.cart.filter((item) => {
-            total += (item.productPrice * item.productQuantity);
-        });
-
-        return total;
-      }
-    },
-
     mutations:{
 
       addToCart(state, item){
@@ -38,6 +26,18 @@ export default new Vuex.Store({
         this.commit('saveData');
 
       },
+      saveData(state){
+        window.localStorage.setItem('cart',JSON.stringify(state.cart));
+      }, 
+
+      removeFromCart(state, item){
+          let index = state.cart.indexOf(item);
+          state.cart.splice(index,1);
+
+          this.commit('saveData');
+      },
     }
     
   })
+
+  

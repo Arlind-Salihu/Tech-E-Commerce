@@ -24,7 +24,7 @@ const router = new Router({
     component: Admin,
     meta: {requiresAuth: true},
     children:[
-      {
+      { 
         path: "overview",
         name: "overview",
         component: Overview
@@ -63,7 +63,7 @@ const router = new Router({
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  },
+  }
 ]
 });
 

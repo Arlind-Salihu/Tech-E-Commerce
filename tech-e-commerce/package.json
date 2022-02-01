@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@firebase/storage": "^0.7.1",
     "bootstrap": "^4.2.1",
     "bootstrap-icons": "^1.7.2",
     "core-js": "^3.6.5",
@@ -36,7 +37,7 @@
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "sweetalert2": "^11.3.6",
+    "sweetalert2": "^11.3.10",
     "vue-template-compiler": "^2.6.11"
   }
 }

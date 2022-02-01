@@ -4,13 +4,13 @@ import 'firebase/firebase-auth'
 import 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALu0a3zv28OzbUT4-JehbkJP0j2Fx7g3Q",
-  authDomain: "tech-e-commerce.firebaseapp.com",
-  projectId: "tech-e-commerce",
-  storageBucket: "tech-e-commerce.appspot.com",
-  messagingSenderId: "1039381493464",
-  appId: "1:1039381493464:web:b27f2f206f4d4128d649ad",
-  measurementId: "G-71R6QTL2L7"
+  apiKey: "AIzaSyA-5Vj73dZd_TjPNpvTJjiEnI5JfNJ3AFY",
+  authDomain: "tech-e-commerce-9ae2b.firebaseapp.com",
+  projectId: "tech-e-commerce-9ae2b",
+  storageBucket: "tech-e-commerce-9ae2b.appspot.com",
+  messagingSenderId: "1092895869531",
+  appId: "1:1092895869531:web:4356ec67a251dcbf304d7e",
+  measurementId: "G-QE26BZ1CL9"
 };
 
 const fb = firebase.initializeApp(firebaseConfig);
