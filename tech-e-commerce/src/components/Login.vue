@@ -93,7 +93,7 @@ methods:{
         fb.auth().signInWithEmailAndPassword(this.email, this.password)
             .then((user) => {
                 $('#login').modal('hide')
-                this.$router.replace('admin')
+                this.$router.replace('admin');
             })
             .catch(function(error){
                 var errorCode = error.code;
