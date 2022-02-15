@@ -53,17 +53,5 @@ export default {
   }
 };
 </script>
-
-<!--     getters: {
-      totalPrice: state => {
-        let total = 0;
-        state.cart.filter((item) => {
-            total += (item.productPrice * item.productQuantity);
-        });
-
-        return total;
-      }
-    }, 
-y       kjo osht te store.js mbi mutition-->
 <style scoped lang="scss">
 </style>
