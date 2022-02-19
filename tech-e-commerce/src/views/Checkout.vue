@@ -1,5 +1,5 @@
 <template>
-  <div class="chekout">
+  <div class="checkout">
        <Navbar></Navbar>
 
         <div class="container mt-5 pt-5">
@@ -43,6 +43,7 @@
             </div>
 
         </div>
+        <mini-cart></mini-cart>
   </div>
 </template>
 
@@ -79,6 +80,11 @@ export default {
 
 
 <style>
+.checkout{
+  background: #f2f2f2;
+}
+
+
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
  * how you can use CSS to style your Element's container.

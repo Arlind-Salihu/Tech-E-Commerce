@@ -2,8 +2,6 @@
   <div class="home">
     <Navbar></Navbar>
       <Hero/>
-      <products-list></products-list>
-
       <div class="container h-100">
         <div class="row p-5 h-100 justify-content-center align-items-center">
           <div class="col-md-6">
@@ -14,7 +12,7 @@
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!
             </p>
-             <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
+             <button class="btn custom-btn btn-outline-primary mr-4"><router-link to="/checkout" class="nav-link"></router-link>Checkout Products</button>
           </div>
         </div>
       </div>
@@ -39,4 +37,7 @@ export default {
 </script>
 
 <style>
+.home{
+  background: #f2f2f2;
+}
 </style>
