@@ -5,6 +5,7 @@ import Admin from "../views/Admin.vue";
 import Overview from "../views/Overview.vue";
 import Products from "../views/Products.vue";
 import ProductList from "../sections/ProductList.vue";
+import ProductDetails from "../sections/ProductDetails.vue";
 import Orders from "../views/Orders.vue";
 import Profile from "../views/Profile.vue";
 import {fb} from '../firebase';
@@ -23,6 +24,11 @@ const router = new Router({
     path: "/products",
     name: "Products-list",
     component: ProductList,
+  },
+  {
+    path: "/productDetails",
+    name: "ProductDetails",
+    component: ProductDetails,
   },
   {
     path: "/admin",

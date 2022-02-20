@@ -23,7 +23,7 @@
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <h5 class="card-title">{{ product.name }}</h5>
-                <h5 class="card-priceS">{{ product.price | currency }}</h5>
+                <h5 class="card-prices">{{ product.price}}.00€</h5>
               </div>
               <add-to-cart
                 :image="getImage(product.images)"
@@ -33,7 +33,7 @@
               >
               </add-to-cart>
             </div>
-          </div>
+          </div>.
         </div>
       </div>
     </div>
