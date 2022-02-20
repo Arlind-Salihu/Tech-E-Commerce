@@ -10,7 +10,7 @@
           <div class="col-md-6">
             <h3>Learn More About us</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quaerat voluptate iusto? Nihil voluptas vitae veritatis magnam reprehenderit, reiciendis ex? Libero quasi natus veniam voluptatum, voluptas exercitationem ratione consectetur et!
+              Tech E-Commerce is a young startup and the brainchild of a team of Techies from Kosovo. Our parent company Techstore is a decade long leader in IT retail from Kosova.  Our mantra is "Technology for the masses" which we can achieve by making delivery of IT Products at an affordable price within 48 Hours anywhere in Europe supported by a strong logistics backbone.
             </p>
              <button class="button-29" role="button"><a href="/checkout" id="a">Checkout Products</a></button>
           </div>

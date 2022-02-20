@@ -8,7 +8,7 @@
                   Tech E-Commerce
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos numquam tempora, iure delectus totam minus quam aperiam ratione dolores magni voluptates ut necessitatibus odio ipsum fuga, voluptas ab praesentium nihil?
+                  Being a decade old organization makes us more trustworthy.<br> We precheck and preinstall the laptop before it is delivered to you assuring you defect free delivery. <br> 24 Hour service guarantee assured when you buy any It product.
                 </p>
                 <div class="hero-btn mt-5">
                     <button class="button-29" role="button"><a href="/products">Products</a></button>
