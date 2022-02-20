@@ -19,7 +19,7 @@
       <login></login>
 
       <mini-cart></mini-cart>
-
+      <footer-tech></footer-tech>
   </div>
 </template>
 

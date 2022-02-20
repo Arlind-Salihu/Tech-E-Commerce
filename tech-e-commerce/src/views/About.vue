@@ -56,6 +56,7 @@
 			  </div>
 		</div>
     <mini-cart></mini-cart>
+    <footer-tech></footer-tech>
   </div>
 </template>
 <style>

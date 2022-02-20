@@ -2,7 +2,7 @@
   <div class="hello">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../assets/tech-logo.png" alt="Tech" height="50px" width="50px"/>
-  <a class="navbar-brand" href="#">Tech E-Commerce</a>
+  <a class="navbar-brand" href="/">Tech E-Commerce</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
