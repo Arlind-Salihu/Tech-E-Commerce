@@ -4,13 +4,13 @@ import 'firebase/firebase-auth'
 import 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA-5Vj73dZd_TjPNpvTJjiEnI5JfNJ3AFY",
-  authDomain: "tech-e-commerce-9ae2b.firebaseapp.com",
-  projectId: "tech-e-commerce-9ae2b",
-  storageBucket: "tech-e-commerce-9ae2b.appspot.com",
-  messagingSenderId: "1092895869531",
-  appId: "1:1092895869531:web:4356ec67a251dcbf304d7e",
-  measurementId: "G-QE26BZ1CL9"
+  apiKey: "AIzaSyABue-cwLPZmoBf3dlNbLEqXlY9kY1bsdg",
+  authDomain: "test-abc-c5d3d.firebaseapp.com",
+  projectId: "test-abc-c5d3d",
+  storageBucket: "test-abc-c5d3d.appspot.com",
+  messagingSenderId: "434493635411",
+  appId: "1:434493635411:web:4197a7daaf502819d03fa6",
+  measurementId: "G-Y39RWQY71B"
 };
 
 
