@@ -8,6 +8,7 @@ import ProductList from "../sections/ProductList.vue";
 import ProductDetails from "../sections/ProductDetails.vue";
 import Orders from "../views/Orders.vue";
 import Profile from "../views/Profile.vue";
+import Users from "../views/Users.vue";
 import {fb} from '../firebase';
 
 Vue.use(Router);
@@ -37,9 +38,9 @@ const router = new Router({
     meta: {requiresAuth: true},
     children:[
       { 
-        path: "overview",
-        name: "overview",
-        component: Overview
+        path: "Users",
+        name: "users",
+        component: Users
       },
       {
           path: "products",

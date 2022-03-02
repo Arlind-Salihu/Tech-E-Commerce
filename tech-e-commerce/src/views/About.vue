@@ -16,7 +16,7 @@
               <div class="row">
                 <div class="column">
                   <div class="card">
-                    <img src="../assets/staff/lindi.png" alt="staff" id="staff">
+                    <img src="../assets/staff/abc.png" alt="staff" id="staff">
                     <div class="container">
                       <h2>Arlind Salihu</h2>
                       <p><b>Full Stack Developer</b></p>

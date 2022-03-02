@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: lightblue;">
         <img src="../assets/tech-logo.png" alt="Tech" height="50px" width="50px"/>
-  <a class="navbar-brand" href="/">Tech E-Commerce</a>
+  <a class="navbar-brand" href="/" style="margin-left:10px;">Tech E-Commerce</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,9 +27,9 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <a class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</a>
+      <a class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#login" style="color:white">Login</a>
             <a class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#miniCart">
-              <i class="fas fa-cart-plus"></i>
+              <i class="fas fa-cart-plus" style="color:white"></i>
             </a>
     </form>
   </div>
@@ -39,12 +39,13 @@
 </template>
 
 <script>
+import Login from './Login.vue';
 export default {
   name: "Navbar",
   props: {
     msg: String,
   },
-  components:{}
+  components:{Login}
 };
 </script>
 

@@ -112,7 +112,8 @@ methods:{
         $('#login').modal('hide')
 
         db.collection("profiles").doc(user.user.uid).set({
-                        name: this.name
+                        name: this.name,
+                        email: this.email
                     })
                     .then(function() {
                         console.log("Document successfully written!");

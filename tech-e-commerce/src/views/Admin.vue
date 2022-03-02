@@ -50,9 +50,9 @@
                         </li>
 
                         <li>
-                            <router-link to="/admin/overview">
+                            <router-link to="/admin/users">
                                 <i class="fa fa-chart-line"></i>
-                                <span>Overview</span>
+                                <span>Users</span>
                             </router-link>
                         </li>
                         <li>
