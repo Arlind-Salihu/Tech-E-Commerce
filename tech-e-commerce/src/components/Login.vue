@@ -46,6 +46,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="role">Role</label>
+                                <input type="text" v-model="role" class="form-control" id="role" placeholder="Your role">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="email">Email address</label>
                                 <input type="email"  v-model="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
@@ -82,6 +87,7 @@ export default {
   data(){
       return {
         name: null,
+        role: null,
         email: null,
         password: null
     }
@@ -93,7 +99,11 @@ methods:{
         fb.auth().signInWithEmailAndPassword(this.email, this.password)
             .then((user) => {
                 $('#login').modal('hide')
+                if(this.role === 'User'){
+                this.$router.replace('products');
+            }else{
                 this.$router.replace('admin');
+            }
             })
             .catch(function(error){
                 var errorCode = error.code;
@@ -113,6 +123,7 @@ methods:{
 
         db.collection("profiles").doc(user.user.uid).set({
                         name: this.name,
+                        role: this.role,
                         email: this.email
                     })
                     .then(function() {
@@ -121,8 +132,13 @@ methods:{
                     .catch(function(error) {
                         console.error("Error writing document: ", error);
                     });
-            
+            if(this.role === 'User'){
+                this.$router.replace('products');
+            }else if(this.role === 'Admin'){
                 this.$router.replace('admin');
+            } else{
+                alert("Role must be: Admin or User!")
+            }
     })
     .catch(function(error){
     // Handle Errors here.
@@ -135,7 +151,7 @@ methods:{
     }
     console.log(error);
     });
-  }
+  },
  }
 };
 </script>
