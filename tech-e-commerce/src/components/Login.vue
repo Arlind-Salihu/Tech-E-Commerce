@@ -21,6 +21,13 @@
                         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
                             
                             <h5 class="text-center">Login Please</h5>
+                            <div class="form-group">                                                          
+                                <select v-model="role">
+                                    <option disabled value="">Please select role</option>
+                                    <option>Admin</option>
+                                    <option>User</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                                           
                                 <label for="exampleInputEmail1">Email address</label>
@@ -45,9 +52,12 @@
                                 <input type="text" v-model="name" class="form-control" id="name" placeholder="Your username">
                             </div>
 
-                            <div class="form-group">
-                                <label for="role">Role</label>
-                                <input type="text" v-model="role" class="form-control" id="role" placeholder="Your role">
+                            <div class="form-group">                                                          
+                                <select v-model="role">
+                                    <option disabled value="">Please select role</option>
+                                    <option>Admin</option>
+                                    <option>User</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
@@ -101,7 +111,7 @@ methods:{
                 $('#login').modal('hide')
                 if(this.role === 'User'){
                 this.$router.replace('products');
-            }else{
+            }else if(this.role === 'Admin'){
                 this.$router.replace('admin');
             }
             })
