@@ -38,16 +38,21 @@
       </div>
     </div>
     <mini-cart></mini-cart>
+    <login></login>
     <footer-tech></footer-tech>
   </div>
 </template>
 
 <script>
+import Login from "@/components/Login.vue";
 import { db } from "../firebase";
 export default {
   name: "Products-list",
   props: {
     msg: String,
+  },
+  components:{
+    Login
   },
   data() {
     return {

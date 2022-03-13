@@ -22,6 +22,9 @@
         <router-link to="/checkout" class="nav-link">Checkout</router-link>
       </li>
       <li class="nav-item">
+        <router-link to="/feedback" class="nav-link">Feedback</router-link>
+      </li>
+      <li class="nav-item">
         <router-link to="/about" class="nav-link">About</router-link>
       </li>
     </ul>

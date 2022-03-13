@@ -56,9 +56,20 @@
 			  </div>
 		</div>
     <mini-cart></mini-cart>
+    <login></login>
     <footer-tech></footer-tech>
   </div>
 </template>
+<script>
+import Login from "@/components/Login.vue";
+
+export default {
+  name: "home",
+  components: {
+    Login
+  }
+};
+</script>
 <style>
 .about{
   background: #f2f2f2;
@@ -89,7 +100,6 @@ body {
     flex-direction: row;
     justify-content: center;  
     float: left;
-    margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 16px;
   }

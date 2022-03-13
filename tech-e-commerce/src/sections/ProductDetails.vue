@@ -1,7 +1,7 @@
 <template>
   <div class="product-test">
     <Navbar></Navbar>
-    <h3 class="d-inline-block float-left">Product Details</h3>
+    <h3 class="d-inline-block float-left" id="title">Product Details</h3>
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -45,6 +45,7 @@
           </tr>
         </tbody>
       </table>
+      <hr>
     </div>
 
     <div
@@ -127,7 +128,7 @@
                     v-bind:key="(image, index)"
                   >
                     <div class="img-wrapp">
-                      <img :src="image" alt="" width="120px" />
+                      <img :src="image" alt="" width="100px" />
                     </div>
                   </div>
                 </div>
@@ -147,18 +148,20 @@
       </div>
     </div>
     <mini-cart></mini-cart>
+    <login></login>
     <footer-tech></footer-tech>
   </div>
 </template>
 
 <script>
 import { VueEditor } from "vue2-editor";
+import Login from "@/components/Login.vue";
 import { fb, db } from "../firebase";
 
 export default {
   name: "Products",
   components: {
-    VueEditor,
+    VueEditor, Login
   },
   props: {
     msg: String,
@@ -206,3 +209,9 @@ export default {
   },
 };
 </script>
+
+<style>
+#title{
+  padding: 20px;
+}
+</style>

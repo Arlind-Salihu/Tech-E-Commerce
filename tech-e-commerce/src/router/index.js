@@ -8,6 +8,7 @@ import ProductList from "../sections/ProductList.vue";
 import ProductDetails from "../sections/ProductDetails.vue";
 import Orders from "../views/Orders.vue";
 import Profile from "../views/Profile.vue";
+import Feedback from "../views/Feedback.vue";
 import Users from "../views/Users.vue";
 import {fb} from '../firebase';
 
@@ -30,6 +31,11 @@ const router = new Router({
     path: "/productDetails",
     name: "ProductDetails",
     component: ProductDetails,
+  },
+  {
+    path: "/feedback",
+    name: "Feedback",
+    component: Feedback,
   },
   {
     path: "/admin",

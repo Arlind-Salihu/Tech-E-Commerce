@@ -44,6 +44,7 @@
 
         </div>
         <mini-cart></mini-cart>
+        <login></login>
     <footer-tech></footer-tech>
   </div>
 </template>
@@ -51,7 +52,7 @@
 <script>
 
 import { Card, createToken } from 'vue-stripe-elements-plus';
-
+import Login from "@/components/Login.vue";
 
 export default {
     data () {
@@ -63,7 +64,7 @@ export default {
     }
   },
 
-  components: { Card },
+  components: { Card, Login},
 
   methods: {
     pay () {
