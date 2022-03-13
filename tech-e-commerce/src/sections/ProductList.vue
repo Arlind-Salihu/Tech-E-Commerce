@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-4" v-for="product in products" v-bind:key="product">
           <div class="card product-item">
-            <carousel :perPage="1">
+            <carousel :perPage="1" id="lindi">
               <slide
                 v-for="(image, index) in product.images"
                 v-bind:key="(image, index)"
@@ -76,5 +76,10 @@ export default {
 <style scoped lang="scss">
 .products {
   background: #f2f2f2;
+}
+#lindi:hover{
+  transform: scale(1.1);
+    box-shadow: 0;
+    opacity: 1;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: lightblue;">
-        <img src="../assets/tech-logo.png" alt="Tech" height="50px" width="50px"/>
+        <a href="/"><img src="../assets/tech-logo.png" alt="Tech" height="50px" width="50px"></a>
   <a class="navbar-brand" href="/" style="margin-left:10px;">Tech E-Commerce</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

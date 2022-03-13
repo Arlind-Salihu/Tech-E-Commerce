@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                     <p>
-                        Total Price : {{ this.$store.getters.totalPrice | currency }}
+                        Total Price : {{ this.$store.getters.totalPrice }}.00€
                     </p>
 
                    

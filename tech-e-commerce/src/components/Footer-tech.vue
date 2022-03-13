@@ -16,7 +16,7 @@
                         <h3>About</h3>
                         <ul>
                             <li><a href="/about">Team</a></li>
-                            <li><a href="/">Company</a></li>
+                            <li><a href="/feedback">Feedback</a></li>
                             <li><a href="#">Legacy</a></li>
                         </ul>
                     </div>
